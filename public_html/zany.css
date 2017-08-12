@@ -64,7 +64,6 @@ footer {
     margin-bottom: 0px;
     
     text-align: center;
-    text-size: 1em;
     font-family: Georgia, Garamond, serif;
 }
 
@@ -86,6 +85,9 @@ h2 {
     font-size: 36px;
 }
 
+h4 {
+    font-size: 24px;
+}
 
 #wel_body {
     position: relative;
@@ -125,3 +127,8 @@ button {
     box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
 }
 
+#read_h1 {
+    position: relative;
+    font-size: 48px;    
+    top: -36px;
+}
