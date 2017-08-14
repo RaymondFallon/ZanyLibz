@@ -6,7 +6,7 @@ var prompts = {
   this for fun, are you?', 'Adjective', 'Adverb', 'Adjective', 'Plural noun',
   'A number (How \'bout a positive integer?)', 'An article of clothing', 'Body part'],
   'hero': ['We\'re going to need some characters, right? Let\'s start with \n\
-  a boy\'s name', 'Now balance the scales with a girl\s name', 'Adjective', 
+  a boy\'s name.', 'Now balance the scales with a girl\s name.', 'Adjective', 
   'Verb: present participle (that\'s those "ing" ones)', 'An animal', 'Adjective', 
   'An element (natural or periodic...whichever you\'re feeling!)', 'A hobby...\n\
   one of yours, if you want! No pressure.']
@@ -100,7 +100,8 @@ But you " + userInputs[2].toLowerCase() + " want to know a little more about me 
         animalUpper = userInputs[4];
         elementUpper = userInputs[6];
       }
-      if (Math.random() > 0.5) {
+      var roll = Math.random();
+      if (roll < 0.5) {
         // the boy is the hero
         he_lower = 'he';
         He_upper = 'He';
@@ -124,12 +125,12 @@ But you " + userInputs[2].toLowerCase() + " want to know a little more about me 
       if (/^[aeiouAEIOU]/i.test(userInputs[5])) {a1 = 'an ';}
       else {a1 = 'a ';}
       
-      return "It was just a normal, " + userInputs[2] + " day for " +
-firstNameGood + " " + lastNameGood + ". " + He_upper + " was just " + 
+      return "It was just an average, " + userInputs[2] + " day for " +
+firstNameGood + " " + lastNameGood + ". " + He_upper + " was quietly " + 
 userInputs[3] + " in the science lab when " + he_lower + " was suddenly \n\
 bitten by a radioactive " + userInputs[4].toLowerCase() + "! After some slight\n\
-soreness, followed by a 3-day coma, followed by " + a1 + userInputs[5] + 
-"costume montage, " + firstNameGood + " became the mighty " + animalUpper +
+soreness, followed by a 3-day coma, followed by  " + a1 + userInputs[5] + 
+" costume montage, " + firstNameGood + " became the mighty " + animalUpper +
 manGood + "! But " + animalUpper + manGood + " wasn't the only wonder to come \n\
 out of that science lab--oh no! It was there that a freak " + 
 userInputs[6].toLowerCase() + " accident turned " + firstNameEvil + " " + lastNameEvil +
@@ -140,7 +141,7 @@ mutual love of " + userInputs[7].toLowerCase() + "! But can " + animalUpper +
 manGood + " harness this " + userInputs[7].toLowerCase() + "-love to turn \n\
 his rival to the right side of the law? Or will their rivalry raze this city \n\
 to dust? Find out this summer in: " + firstNameGood + " " + lastNameGood + 
-" v. " + firstNameEvil + " " + lastNameEvil + ": The Birth of the " + 
+" v. " + firstNameEvil + " " + lastNameEvil + ": Birth of " + 
 elementUpper + "-" + animalUpper + ".";
     default:
       $(document).prop('title', 'testinY');
@@ -158,9 +159,7 @@ function try_input(phrase) {
         $('#zany_build_page').css('display', 'none');
         $('#zany_read_page').css('display', 'inline');
         var finishedStory = build_story_from_input();
-        $(document).prop('title', 'test1');
         $('<h4>' + finishedStory + '</h4>').appendTo('#read_area');
-        $(document).prop('title', 'test2');
     }
     else {
       promptIndex++;
