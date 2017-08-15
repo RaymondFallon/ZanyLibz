@@ -108,10 +108,8 @@ h5 {
     border-style: groove;
     padding: 0px 2px 2px 2px;
     display: inline;
-}
-
-.story {
-    line-height: 100%;
+    line-height: 170%;
+    white-space: nowrap;
 }
 
 .playzone {
