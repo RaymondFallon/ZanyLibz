@@ -33,7 +33,6 @@ and open the template in the editor.
 }
 
 #headtitle {
-    /*margin-top: 40px;*/
     position: relative;
     top: -25px;
     color: black;
@@ -52,8 +51,7 @@ body {
     position: relative;
     background: -webkit-linear-gradient(0deg, blue 0%, red 100%);
     padding: 100px 20% 30px 20%;
-    text-align: center;
-    
+    text-align: center;    
     background: url('img/blue_flash.jpg');
     background-size: cover;
 }
@@ -128,13 +126,14 @@ top: -28px;
 input {
   width: 80%;
   height: 75px;
-  background-color: lightgrey; //#94b8b8;
+  background-color: lightgrey;
   font-size: 48px;
   text-align: center;
 }
 
 button {
     background-color: #009999;
+    color: black;
     font-size: 32px;
     padding: 50px;
     border-radius: 4px;
