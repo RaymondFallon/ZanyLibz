@@ -110,6 +110,10 @@ h5 {
     display: inline;
 }
 
+.story {
+    line-height: 100%;
+}
+
 .playzone {
     font-family: Dosis;
 }

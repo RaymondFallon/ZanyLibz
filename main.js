@@ -42,7 +42,8 @@ var lastNames = {
 var promptIndex = 0;
 
 function cleanString(s) {
-    return s.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/"/g, '&quot;');
+  s = s.replace(/</g, '&lt;').replace(/>/g, '&gt;')
+  return s.replace(/&/g, '&amp;').replace(/'/g, '&apos;').replace(/"/g, '&quot;');
 }
 
 function build_story_from_input() {
@@ -55,6 +56,11 @@ function build_story_from_input() {
       if (/^[aeiouAEIOU]/i.test(userInputs[3])) {a2 = 'an ';}
       if (/^[aeiouAEIOU]/i.test(userInputs[6])) {a3 = 'an ';}
       if (/s$/i.test(userInputs[6])) {a3 = '';}
+      var compEmail = userInputs[0].toLowerCase().replace(/[\#\s]/g, '');
+      compEmail = compEmail.replace(/&apos;/g, '');
+      compEmail = compEmail.replace(/&quot;/g, '');
+      compEmail = compEmail.replace(/&amp;/g, '');
+      compEmail = compEmail.replace(/\$/g, 'S');
       return "Greetings! My name is Ray Fallon. I am " + a1 + 
         userInputs[1].toLowerCase() + " software developer, eager to make my \n\
         professional start in the industry. I'd like to say upfront and \n\
@@ -66,8 +72,8 @@ But you " + userInputs[2].toLowerCase() + " want to know a little more about me 
         ". I'm the youngest of " + userInputs[5].toLowerCase() + " children, which \n\
         probably tells you all you need to know!  HAHA, am I right \n\
         HR-person? Anyway, as long as your developers don't have to wear " +  
-        a3 + userInputs[6].toLowerCase() + " to work, I think we've got a match! So shoot \n\
-        me an email at Raymond.Fallon@" + userInputs[0].toLowerCase() + 
+        a3 + userInputs[6].toLowerCase() + " to work, I think we've got a \n\
+        match! So shoot me an email at Raymond.Fallon@" + compEmail + 
         ".com and we'll get the ball rolling!  Heh, just kidding, email me \n\
         at " + userInputs[1].toLowerCase() + "-Ray@" + 
         userInputs[3].toLowerCase() + userInputs[4].toLowerCase() + ".org. \n\
