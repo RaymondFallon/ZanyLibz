@@ -25,13 +25,17 @@ and open the template in the editor.
                     <p class='wel_select story'>Ray's Zany Cover Letter</p>
                     <p class='wel_select story'>The Hero's Journey</p>
                 </div>
+                <h3 class="wel_opt">Let someone else have all the fun</h3>
+                <div class="wel_subopt">
+                    <p class="wel_select" id="db_read">Click here to see other users' stories</p>
+                </div>
                 <h3 class="wel_opt">Write a full story of your own!</h3>
                 <div class="wel_subopt">
                     <p class="wel_select" id="self_write">Click here to write the entire story yourself</p>
                 </div>
                 <h3 class="wel_opt">Report the theft of Mad Libs' Intellectual Property</h3>
                 <div class="wel_subopt">
-                    <p class="wel_select" id="theft">Ohh...heh. Ok, no problem... just click here</p>
+                    <p class="wel_select" id="theft">Ohh... heh. Ok, no problem... just click here</p>
                 </div>
                 </div>
             </div>
@@ -53,16 +57,36 @@ and open the template in the editor.
                 <h1 id='read_h1'>You're SO zany. Way to go!</h1>
                 <h5>Here's your story:</h5>
                 <div id="read_area"></div>
+                <h4>Do you want to save this story on our Zany Database?</h4>
+                <div id='save_button'>
+                    <button type="button">Save</button>
+                </div>
             </div>
             <div id="selfwrite_page">
                 <h1>OK. Go write the story yourself.</h1>
                 <h2>Hope you have some paper...</h2>
+            </div>
+            <div id="saved_page">
+                <h1>OK. Saved!</h1>
+                <h2>Ready for another?</h2>
             </div>
         </div>
         <footer>    
             <div id="sig">
                 <p><a id='gitlink' target="_blank" href='https://github.com/RaymondFallon'>Created by: Ray Fallon</a></p>
             </div>
+            <script src="https://www.gstatic.com/firebasejs/4.2.0/firebase.js"></script>
+            <script src='https://cdn.firebase.com/js/client/2.2.1/firebase.js'></script>
+            <script>
+              // Initialize Firebase
+              var config = {
+                apiKey: "AIzaSyD5x_fBPN1u4zqibXK9UXbA5ecVbIXqtbQ",
+                databaseURL: "https://zanylibzdb.firebaseio.com",
+                projectId: "zanylibzdb",
+                storageBucket: "",
+              };
+              firebase.initializeApp(config);
+            </script>
             <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
             <script src='main.js'></script>
         </footer>

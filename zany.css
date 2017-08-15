@@ -116,7 +116,7 @@ h5 {
     font-family: Dosis;
 }
 
-#selfwrite_page, #zany_read_page, #zany_build_page {
+#selfwrite_page, #zany_read_page, #zany_build_page, #saved_page {
     display: none;
 }
 

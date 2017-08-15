@@ -37,12 +37,12 @@ var lastNames = {
   'w': "Wallace",
   'x': "Xanthos",
   'y': "Yarbley",
-  'z': "Ziggarello",
- }
+  'z': "Ziggarello"
+ };
 var promptIndex = 0;
 
 function cleanString(s) {
-  s = s.replace(/</g, '&lt;').replace(/>/g, '&gt;')
+  s = s.replace(/</g, '&lt;').replace(/>/g, '&gt;');
   return s.replace(/&/g, '&amp;').replace(/'/g, '&apos;').replace(/"/g, '&quot;');
 }
 
@@ -176,6 +176,13 @@ function try_input(phrase) {
     return false;
 }
 
+var dbRef = new Firebase('https://zanylibzdb.firebaseio.com/');
+var inputsRef = dbRef.child('userInputs');
+
+function add_to_db(story, inputs) {
+  inputsRef.push([story, inputs]);
+}
+
 function main() {
   $('.wel_subopt').hide();
   $('.wel_opt').on('click', function(){
@@ -232,6 +239,20 @@ function main() {
   $('#entry_form').submit(function() {
     try_input($('#user_in').val());
     return false;
+  });
+  $('#save_button').on('click', function() {
+    $('#zany_read_page').css('display', 'none');
+    add_to_db(storyChosen, userInputs);
+    $('#saved_page').css('display', 'inline');
+  });$('#db_read').on('click', function() {
+    $('#welcome_page').css('display', 'none');
+    $('#zany_read_page').css('display', 'inline');
+    try{
+      
+    }
+    catch(err){
+      
+    }
   });
 }
 
