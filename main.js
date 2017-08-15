@@ -8,7 +8,7 @@ var prompts = {
   'hero': ['We\'re going to need some characters, right? Let\'s start with \n\
   a boy\'s name.', 'Now balance the scales with a girl\s name.', 'Adjective', 
   'Verb: present participle (that\'s those "ing" ones)', 'An animal', 'Adjective', 
-  'An element (natural or periodic...whichever you\'re feeling!)', 'A hobby...\n\
+  'An element (natural or periodic... whichever you\'re feeling!)', 'A hobby...\n\
   one of yours, if you want! No pressure.']
 };
 var lastNames = {
@@ -132,11 +132,11 @@ But you " + userInputs[2].toLowerCase() + " want to know a little more about me 
       if (/^[aeiouAEIOU]/i.test(userInputs[5])) {a1 = 'an ';}
       else {a1 = 'a ';}
       
-      return "It was just an average, " + userInputs[2] + " day for " +
+      return "It was just an average, " + userInputs[2].toLowerCase() + " day for " +
 firstNameGood + " " + lastNameGood + ". " + He_upper + " was quietly " + 
-userInputs[3] + " in the science lab when " + he_lower + " was suddenly \n\
+userInputs[3].toLowerCase() + " in the science lab when " + he_lower + " was suddenly \n\
 bitten by a radioactive " + userInputs[4].toLowerCase() + "! After some slight\n\
-soreness, followed by a 3-day coma, followed by  " + a1 + userInputs[5] + 
+soreness, followed by a 3-day coma, followed by  " + a1 + userInputs[5].toLowerCase() + 
 " costume montage, " + firstNameGood + " became the mighty " + animalUpper +
 manGood + "! But " + animalUpper + manGood + " wasn't the only wonder to come \n\
 out of that science lab--oh no! It was there that a freak " + 
