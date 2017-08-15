@@ -46,7 +46,6 @@ function cleanString(s) {
 }
 
 function build_story_from_input() {
-  $(document).prop('title', 'test0');
   switch(storyChosen){
     case 'ray':
       var a1 = 'a ';
@@ -56,7 +55,6 @@ function build_story_from_input() {
       if (/^[aeiouAEIOU]/i.test(userInputs[3])) {a2 = 'an ';}
       if (/^[aeiouAEIOU]/i.test(userInputs[6])) {a3 = 'an ';}
       if (/s$/i.test(userInputs[6])) {a3 = '';}
-      $(document).prop('title', 'testinX');
       return "Greetings! My name is Ray Fallon. I am " + a1 + 
         userInputs[1].toLowerCase() + " software developer, eager to make my \n\
         professional start in the industry. I'd like to say upfront and \n\
@@ -76,8 +74,9 @@ But you " + userInputs[2].toLowerCase() + " want to know a little more about me 
         (Let me know if your insurance covers Vision or if it's just Dental \n\
         and " + userInputs[7][0].toUpperCase()  + 
         userInputs[7].slice(1).toLowerCase() + " coverage.)";
+
     case 'hero':
-      var boyFirst, boyLast, girlFirst, girlLast, he_lower, He_upper, 
+      var boyFirst, boyLast, girlFirst, girlLast, he_lower, He_upper, his, 
               a1, manGood, firstNameGood, lastNameGood, manEvil, firstNameEvil,
               lastNameEvil, animalUpper, elementUpper;
       try {
@@ -111,6 +110,7 @@ But you " + userInputs[2].toLowerCase() + " want to know a little more about me 
         lastNameGood = boyLast;
         firstNameEvil = girlFirst;
         lastNameEvil = girlLast;
+        his = 'his';
       } else {
         // the girl is the hero
         he_lower = 'she';
@@ -121,6 +121,7 @@ But you " + userInputs[2].toLowerCase() + " want to know a little more about me 
         lastNameGood = girlLast;
         firstNameEvil = boyFirst;
         lastNameEvil = boyLast;
+        his = 'her';
       }
       if (/^[aeiouAEIOU]/i.test(userInputs[5])) {a1 = 'an ';}
       else {a1 = 'a ';}
@@ -138,9 +139,9 @@ userInputs[6].toLowerCase() + " accident turned " + firstNameEvil + " " + lastNa
 elementUpper + manEvil + " was every inch the villain that " + animalUpper + 
 manGood + " was the hero. The two were polar opposites--except for their \n\
 mutual love of " + userInputs[7].toLowerCase() + "! But can " + animalUpper +
-manGood + " harness this " + userInputs[7].toLowerCase() + "-love to turn \n\
-his rival to the right side of the law? Or will their rivalry raze this city \n\
-to dust? Find out this summer in: " + firstNameGood + " " + lastNameGood + 
+manGood + " harness this " + userInputs[7].toLowerCase() + "-love to turn " +
+his + " rival to the right side of the law? Or will their rivalry raze this \n\
+city to dust? Find out this summer in: " + firstNameGood + " " + lastNameGood + 
 " v. " + firstNameEvil + " " + lastNameEvil + ": Birth of " + 
 elementUpper + "-" + animalUpper + ".";
     default:
@@ -186,7 +187,7 @@ function main() {
     $(this).css('font-size', '20px');
   });
   $('.wel_opt').mouseleave(function(){
-      $(this).css('font-size', '18px');
+      $(this).css('font-size', '19px');
   });
   $('#theft').on('click', function() {
     $('.headcard').fadeOut(300);
@@ -218,15 +219,6 @@ function main() {
     }
     $('#pos_text').text(prompts[storyChosen][0]);
     promptIndex = 0;
-  
-     /* if ($(this).next().text() === 'Zoo Story') {
-          $(document).prop('title', 'Zoo Story');
-          storyChosen = 'zoo';
-      }
-      else if ($(this).next().text() === 'Jet-setting') {
-          $(document).prop('title', 'Jet-setting');
-          get_user_inputs(1);
-      }*/
   });
   $('#enter_button').on('click', function() {
       try_input($('#user_in').val());
